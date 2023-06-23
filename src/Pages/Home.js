@@ -12,7 +12,7 @@ const Home = () =>{
 
     useEffect(()=>{
         const fetchPosts = async () => {
-            const response = await fetch('https://diary-20vx.onrender.com/api/posts', {
+            const response = await fetch('https://diary-api-ba90.onrender.com/api/posts', {
                 headers: {
                     'Authorization': `Bearer ${user.token}`
                 }
