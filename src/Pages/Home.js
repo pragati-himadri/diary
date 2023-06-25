@@ -1,4 +1,5 @@
 import {useEffect} from 'react';
+import {PuffLoader} from 'react-spinners';
 import {useAuthContext} from '../hooks/useAuthContext.js'
 import { usePostsContext } from '../hooks/usePostsContext.js';
 import PostHead from '../components/PostHead';
@@ -24,6 +25,18 @@ const Home = () =>{
 
         if (user) fetchPosts();
     },[user,dispatch]);
+
+    if (!posts) {
+        return (
+            <div className="spinner">
+                <PuffLoader
+                   color="#36d7b7"
+                size={100}
+            />
+                
+            </div>
+        );
+    }
 
 
 
